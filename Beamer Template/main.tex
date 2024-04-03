@@ -1,0 +1,77 @@
+%für printout: [handout] vor documentclass und anschließend \usepackage{pgfpages} hinzufügen
+\documentclass{beamer}
+%\documentclass[aspectratio=169]{beamer} % for 16:9 aspect ratio
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{csquotes}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{etoolbox}
+\usepackage{adjustbox}
+\usepackage{microtype}
+
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{logicproof}
+
+\usepackage{hyperref}
+%
+\useoutertheme{miniframes}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+\setbeamertemplate{itemize item}[circle]
+\setbeamertemplate{itemize subitem}{>>}
+\setbeamertemplate{blocks}[shadow=false]
+
+
+\setbeamerfont{title}{size=\LARGE}
+\setbeamerfont{subtitle}{size=\normalsize}
+\setbeamerfont{author}{size=\footnotesize}
+
+%\makeatletter
+%\setbeamertemplate{frametitle}[default][left,leftskip=\the\dimexpr\beamer@leftmargin-0.35cm\relax]
+%\makeatother
+
+\addtobeamertemplate{block begin}{%
+  \center\minipage{0.83\textwidth}%
+}{}
+\addtobeamertemplate{block end}{}{\endminipage\par\endcenter}
+
+\setbeamertemplate{footline}{%
+  \hfill%
+  \usebeamercolor[fg]{page number in head/foot}
+  \usebeamerfont{page number in head/foot}
+  \setbeamertemplate{page number in head/foot}[framenumber]
+  \usebeamertemplate*{page number in head/foot}\kern1em\vskip6pt}
+\setbeamercovered{invisible} 
+%
+\setbeamercolor{structure}{fg=black}
+\setbeamercolor{page number in head/foot}{fg=gray}
+\setbeamercolor{section in head/foot}{fg=gray}
+\setbeamercolor{block title}{bg=gray!35,fg=black}
+\setbeamercolor{block body}{bg=gray!15,fg=black}
+
+% Table of Contents Template
+%\AtBeginSection[]
+%{ \begin{frame}
+%    \frametitle{Table of Contents}
+%    \tableofcontents[currentsection]
+%  \end{frame}}
+
+
+
+
+
+% --------------------------------------------
+% START OF DOCUMENT
+\begin{document}
+
+\input{Title Page}
+
+\section{First section}
+\input{Test Section}
+
+\input{Last Page Template}
+\end{document}
